@@ -1,0 +1,34 @@
+button {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+#screens > div:not(:has(>[name="screen"]:checked)) {
+  display: none;
+}
+
+#body:has(#authors-radio:checked) li:has([for="authors-radio"]),
+#body:has(#genres-radio:checked) li:has([for="genres-radio"]),
+#body:has(#books-radio:checked) li:has([for="books-radio"]) {
+  display: none;
+}
+
+dialog {
+  background-color: #fff;
+  margin: auto;
+}
+
+label {
+  display: block;
+}
+
+button:not(:has(label)), button>label {
+  padding: 0.5em;
+}
+
+input {
+  border-bottom: 1px solid #000;
+}

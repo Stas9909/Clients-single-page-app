@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="app.js" type="module"></script>
+  <script src="temp.js" type="module"></script>
+
+  <title>Books Authors</title>
+</head>
+
+<body id="body">
+  <header>
+    <nav>
+      <ul class="nav-bar">
+        <li>
+          <button><label for="authors-radio">Authors</label></button>
+        </li>
+        <li>
+          <button><label for="genres-radio">Genres</label></button>
+        </li>
+        <li>
+          <button><label for="books-radio">Books</label></button>
+        </li>
+      </ul>
+    </nav>
+
+    <form action="javascript:" id="search-form">
+      <input type="text" name="author" placeholder="Author"> or
+      <input type="text" name="book" placeholder="Book">
+      <button>Search</button>
+    </form>
+  </header>
+
+  <div id="screens">
+    <div id="authors-scr">
+      <input type="radio" name="screen" id="authors-radio" hidden checked>
+      <h1>Authors</h1>
+      <button id="add-author-btn">Add Author</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Authors</th>
+            <th>Number of books</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="authors-tbody">
+          <tr>
+            <td>Joan Kathleen Rowling</td>
+            <td>7</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="del-btn">Remove</button>
+              <button class="view-btn">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="author-scr">
+      <input type="radio" name="screen" id="author-radio" hidden>
+
+      <div class="content">
+        <h1>Joan Kathleen Rowling</h1>
+        <h3>31 July 1965</h3>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Books</th>
+            <th>Number of pages</th>
+            <th>Genres</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="author-books-tbody">
+          <tr>
+            <td>Harry Potter and the Philosopher's Stone</td>
+            <td>223</td>
+            <td>Fantasy</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="del-btn">Remove</button>
+              <button class="view-btn">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="add-book-btn">Add Book</button>
+      <button id="edit-author-btn">Edit Author</button>
+      <button id="delete-author-btn">Delete Author</button>
+    </div>
+
+    <div id="genges-scr">
+      <input type="radio" name="screen" id="genres-radio" hidden>
+      <h1>Genres</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Genres</th>
+            <th>Number of books</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="genres-tbody">
+          <tr>
+            <td>Fantasy</td>
+            <td>23</td>
+            <td>
+              <button class="view-btn">view</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="books-scr">
+      <input type="radio" name="screen" id="books-radio" hidden>
+      <h1>Books</h1>
+      <button id="add-book-btn">Add Book</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Books</th>
+            <th>Authors</th>
+            <th>Number of pages</th>
+            <th>Genres</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="books-tbody">
+          <tr>
+            <td>Harry Potter and the Philosopher's Stone</td>
+            <td>Rowling J. K.</td>
+            <td>223</td>
+            <td>Fantasy</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="del-btn">Remove</button>
+              <button class="view-btn">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="book-scr">
+      <input type="radio" name="screen" id="book-radio" hidden>
+
+      <div class="content">
+        <h1>Harry Potter and the Philosopher's Stone</h1>
+        <h2>Joan Kathleen Rowling</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Authors</th>
+            <th>Number of books</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="book-authors-tbody">
+          <tr>
+            <td>Joan Kathleen Rowling</td>
+            <td>7</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="del-btn">Remove</button>
+              <button class="view-btn">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="add-author-btn">Add Author</button>
+      <button id="edit-book-btn">Edit Book</button>
+      <button id="delete-book-btn">Delete Book</button>
+    </div>
+  </div>
+
+  <div id="modals">
+    <dialog id="add-author-modal">
+      <form action="javascript:" id="add-author-form">
+        <label>
+          First Name:
+          <input type="text" name="firstname" required>
+        </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastname" required>
+        </label>
+        <label>
+          Middle Name:
+          <input type="text" name="middlename">
+        </label>
+        <label>
+          Date of Birth:
+          <input type="date" name="dob" required>
+        </label>
+        <button>Add Author</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </dialog>
+
+    <dialog id="add-book-modal">
+      <form action="javascript:" id="add-book-form">
+        <ul class="selected-authors">
+          <li>
+            <span>Joan Kathleen Rowling</span>
+            <button type="button" class="remove-author-btn">&times;</button>
+          </li>
+          <li>
+            <span>Stephen Edwin King</span>
+            <button type="button" class="remove-author-btn">&times;</button>
+          </li>
+        </ul>
+
+        <label>
+          Author:
+          <select>
+            <option value="1">Joan Kathleen Rowling</option>
+            <option value="2">Stephen Edwin King</option>
+            <option value="3">Stephenie Meyer</option>
+            <option value="4">Isaac Asimov</option>
+            <option value="5">James Patterson</option>
+          </select>
+          <button type="button" class="add-author-btn">add</button>
+        </label>
+
+        <label>
+          Title:
+          <input type="text" name="title" required>
+        </label>
+        <label>
+          Page Count:
+          <input type="number" name="pages" required>
+        </label>
+
+        <ul class="selected-genres">
+          <li>
+            <span>Fantasy</span>
+            <button type="button" class="remove-genre-btn">&times;</button>
+          </li>
+          <li>
+            <span>Horror</span>
+            <button type="button" class="remove-genre-btn">&times;</button>
+          </li>
+        </ul>
+
+        <label>
+          Genre:
+          <select>
+            <option value="fantasy">Fantasy</option>
+            <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+          </select>
+          <button type="button" class="add-genre-btn">add</button>
+        </label>
+        
+        <button>Add Book</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </dialog>
+  </div>
+</body>
+
+</html>
