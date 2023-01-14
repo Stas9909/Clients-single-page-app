@@ -10,10 +10,4 @@ function goTo(screen, id) {
   if (id) {
     renderDict[screen](id);
   }
-  // if (id) {
-  //   window.location.hash = `${screen}/${id}`;
-  // }
-  // else {
-  //   window.location.hash = screen;
-  // }
 }
